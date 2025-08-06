@@ -19,4 +19,6 @@ with:
   files: <path-to-a-file...>
 ```
 
+Please note that only Linux runners are supported at the moment.
+
 [bpflint]: https://github.com/d-e-s-o/bpflint
