@@ -1,0 +1,13 @@
+name: lint-bpf
+description: "Lint a set of BPF C files using bpflint."
+
+inputs:
+  files:
+    description: "A list of files to lint. Use @<file> syntax to include
+                  a newline separated file list from <file>."
+    required: true
+    default: World
+
+runs:
+  using: node20
+  main: dist/index.js

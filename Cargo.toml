@@ -1,0 +1,11 @@
+# A dummy Cargo project file enabling semi-automated bpflinter version
+# management via Dependabot.
+
+[package]
+name = "bpflinter-version"
+
+[dependencies]
+# This file is parsed ghetto-style, assuming the `bpflinter` version
+# being located on the last line and it using <major>.<minor>.<patch>
+# syntax.
+bpflinter = "0.1.2"
