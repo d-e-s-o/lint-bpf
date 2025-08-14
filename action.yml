@@ -1,5 +1,8 @@
 name: lint-bpf
 description: "Lint a set of BPF C files using bpflint."
+branding:
+  icon: 'alert-triangle'
+  color: 'yellow'
 
 inputs:
   args:
@@ -14,7 +17,6 @@ inputs:
     description: "A list of files to lint. Use @<file> syntax to include
                   a newline separated file list from <file>. This option
                   is deprecated. Use 'args' instead."
-
 
 runs:
   using: node20

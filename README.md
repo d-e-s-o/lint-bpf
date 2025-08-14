@@ -1,6 +1,8 @@
 lint-bpf <img src="https://github.com/d-e-s-o/bpflint/blob/main/var/logo.png" style="height:1em">
 ========
 
+- [Changelog](CHANGELOG.md)
+
 A GitHub Action for linting your BPF C source code using
 [`bpflint`][bpflint].
 
@@ -17,7 +19,7 @@ syntax to include a newline separated file list from `<file>`. Refer to
 ## Example usage
 
 ```yaml
-uses: d-e-s-o/lint-bpf@v0.1.0
+uses: d-e-s-o/lint-bpf@v0.1.1
 with:
   args: <list-of-arguments...>
 ```
