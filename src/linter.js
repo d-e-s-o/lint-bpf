@@ -30,9 +30,21 @@ async function installBpflinter() {
 
 async function main() {
     await installBpflinter();
-    // `files` input defined in action metadata file
-    const files = core.getInput("files");
-    await exec.exec('bpflinter', files);
+    const files = core.getInput('files');
+    if (files) {
+        core.warning("The \'files\' option is deprecated in favor of " +
+            "'args\' and will be removed soon. Please use \'args\' " +
+            "instead.");
+    }
+    // `args` input defined in action metadata file
+    let args = core.getInput('args');
+    if (args && files) {
+        core.error("The \'args\' and \'files\' options are mutually exclusive.");
+    }
+    if (!args) {
+      args = files;
+    }
+    await exec.exec('bpflinter', args);
 }
 
 module.exports = {

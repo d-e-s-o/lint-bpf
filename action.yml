@@ -2,11 +2,19 @@ name: lint-bpf
 description: "Lint a set of BPF C files using bpflint."
 
 inputs:
+  args:
+    description: "A list of arguments to pass to the bpflinter CLI.
+                  Positional arguments are treated as file names to
+                  lint. Use '@<file>' syntax to include a newline
+                  separated file list from '<file>'. Refer to
+                  https://github.com/d-e-s-o/bpflint/blob/main/cli/USAGE.md
+                  for additional details."
+    required: true
   files:
     description: "A list of files to lint. Use @<file> syntax to include
-                  a newline separated file list from <file>."
-    required: true
-    default: World
+                  a newline separated file list from <file>. This option
+                  is deprecated. Use 'args' instead."
+
 
 runs:
   using: node20
