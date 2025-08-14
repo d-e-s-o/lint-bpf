@@ -1,0 +1,21 @@
+name: Test
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  dist-package:
+    name: Check dist/ package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+      - run: npm ci
+      - run: npx rollup --config rollup.config.js
+      # index.js.map contains absolute and system specific paths. We
+      # cannot use it as a reference. I wish I was kidding...
+      - run: git checkout -- dist/index.js.map
+      - name: Check that rollup package is up-to-date
+        run: git diff --exit-code dist/index.js ||
+               (echo "!!!! dist package outdate; please regenerate via 'npx rollup --config rollup.config.js' !!!!" && false)
