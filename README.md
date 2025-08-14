@@ -1,4 +1,4 @@
-lint-bpf
+lint-bpf <img src="https://github.com/d-e-s-o/bpflint/blob/main/var/logo.png" style="height:1em">
 ========
 
 A GitHub Action for linting your BPF C source code using
