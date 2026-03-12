@@ -20,7 +20,8 @@ async function installBpflinter() {
     });
     const lines = data.trim().split('\n');
     const lastLine = lines[lines.length - 1].trim();
-    const bpflinterVersion = lastLine.split('=')[1].trim().replace(/"/g, '');
+    const parts = lastLine.split('=');
+    const bpflinterVersion = parts[parts.length - 1].trim().replace(/"/g, '');
 
     const downloadPath = await tc.downloadTool(`https://github.com/d-e-s-o/bpflint/releases/download/cli-v${bpflinterVersion}/bpflinter-x86_64-unknown-linux-musl`);
     await fs.chmod(downloadPath, '755');
