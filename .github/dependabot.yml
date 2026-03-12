@@ -7,4 +7,4 @@ updates:
     versioning-strategy: auto
     directory: /
     schedule:
-      interval: daily
+      interval: weekly
