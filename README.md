@@ -19,7 +19,7 @@ syntax to include a newline separated file list from `<file>`. Refer to
 ## Example usage
 
 ```yaml
-uses: d-e-s-o/lint-bpf@v0.1.1
+uses: d-e-s-o/lint-bpf@v0.1.2
 with:
   args: <list-of-arguments...>
 ```
